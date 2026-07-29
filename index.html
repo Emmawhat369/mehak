@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry My Sister ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffe4ec,#dff8ff);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:hidden;
+}
+
+.card{
+width:90%;
+max-width:430px;
+background:#fff;
+padding:25px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+animation:show 1s;
+z-index:2;
+}
+
+@keyframes show{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+
+.panda{
+width:170px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-10px);}
+}
+
+.photo{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #ff7ca8;
+margin:15px auto;
+display:block;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+color:#ff4f87;
+margin-top:10px;
+}
+
+p{
+margin:15px 0;
+line-height:1.8;
+color:#555;
+font-size:17px;
+}
+
+button{
+padding:13px 30px;
+border:none;
+background:#ff4f87;
+color:white;
+font-size:18px;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#surprise{
+display:none;
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#27ae60;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 5s linear forwards;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{opacity:1;}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="panda.gif" class="panda">
+
+<h1>I'm Sorry, My Dear Sister 💖</h1>
+
+<img src="sister.jpg" class="photo">
+
+<p>
+Dear Sister ❤️<br><br>
+
+Mujhse jo bhi ghalti hui uske liye dil se maafi chahta hoon. 🥺
+
+Tum meri life ki sabse pyari aur special insaan ho.
+
+Main promise karta hoon ke dobara tumhara dil nahi dukhaunga.
+
+Please mujhe maaf kar do... 💕
+</p>
+
+<button onclick="love()">Forgive Me 🥹</button>
+
+<div id="surprise">
+🐼 Thank You Sister ❤️<br>
+I Love You Forever 💖
+</div>
+
+</div>
+
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function love(){
+
+document.getElementById("surprise").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML=Math.random()>0.5?"❤️":"💖";
+
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(18+Math.random()*30)+"px";
+h.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},6000);
+
+}
+
+document.getElementById("music").play();
+
+}
+</script>
+
+</body>
+</html>
